@@ -200,3 +200,4 @@ C:\Tutorial\BOM_Extarction\obj\Release\net10.0\win-x64\refint\BOM_Extarction.dll
 C:\Tutorial\BOM_Extarction\obj\Release\net10.0\win-x64\BOM_Extarction.pdb
 C:\Tutorial\BOM_Extarction\obj\Release\net10.0\win-x64\BOM_Extarction.genruntimeconfig.cache
 C:\Tutorial\BOM_Extarction\obj\Release\net10.0\win-x64\ref\BOM_Extarction.dll
+C:\Tutorial\BOM_Extarction\obj\Release\net10.0\win-x64\BOM_Extarction.sourcelink.json
