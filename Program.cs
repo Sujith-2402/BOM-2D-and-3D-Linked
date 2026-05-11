@@ -9,8 +9,8 @@ const string defaultOutputFileName = "BOM_Linked_Output.xlsx";
 
 try
 {
-    //Console.WriteLine("BOM 2D/3D Link Generator");
-    //Console.WriteLine();
+    Console.WriteLine("BOM 2D/3D Link Generator");
+    Console.WriteLine();
 
     string detailsPath = GetPath(args, 0, "Enter 1st input file path (drawing details): ");
     string parentChildPath = GetPath(args, 1, "Enter 2nd input file path (parent-child links): ");
@@ -33,7 +33,13 @@ catch (Exception ex)
 {
     Console.Error.WriteLine();
     Console.Error.WriteLine("Failed: " + ex.Message);
+    string logPath = WriteErrorLog(ex);
+    Console.Error.WriteLine("Error log: " + logPath);
     Environment.ExitCode = 1;
+}
+finally
+{
+    PauseBeforeExit();
 }
 
 static string GetPath(string[] args, int index, string prompt)
@@ -69,6 +75,36 @@ static void ValidateInputFile(string path, string name)
     {
         throw new FileNotFoundException($"{name} was not found.", path);
     }
+}
+
+static string WriteErrorLog(Exception ex)
+{
+    string logPath = Path.Combine(Path.GetTempPath(), "BOM_Extarction_Error.log");
+    string message = $"""
+        Time: {DateTime.Now:yyyy-MM-dd HH:mm:ss}
+        Machine: {Environment.MachineName}
+        User: {Environment.UserName}
+        OS: {Environment.OSVersion}
+        Error:
+        {ex}
+
+        """;
+
+    File.AppendAllText(logPath, message);
+    return logPath;
+}
+
+static void PauseBeforeExit()
+{
+    if (Console.IsInputRedirected)
+    {
+        return;
+    }
+
+    Console.WriteLine();
+    Console.Write("Press any key to close this window...");
+    Console.ReadKey(intercept: true);
+    Console.WriteLine();
 }
 
 static string ResolveOutputPath(string outputPath)

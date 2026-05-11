@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BOM_Extarction")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dae67a2c05beddf60eef86dc51d696bc30a953e0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0302b3e7e2d394809cf5df1f59e22789e8708292")]
 [assembly: System.Reflection.AssemblyProductAttribute("BOM_Extarction")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BOM_Extarction")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
