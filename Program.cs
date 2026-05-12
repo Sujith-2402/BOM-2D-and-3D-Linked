@@ -527,11 +527,15 @@ static HashSet<int> ReadDateStyleIndexes(ZipArchive archive)
     XNamespace main = "http://schemas.openxmlformats.org/spreadsheetml/2006/main";
     using Stream stream = entry.Open();
     XDocument document = XDocument.Load(stream);
-    Dictionary<int, string> customFormats = document.Descendants(main + "numFmt")
-        .Where(format => int.TryParse(format.Attribute("numFmtId")?.Value, out _))
-        .ToDictionary(
-            format => int.Parse(format.Attribute("numFmtId")!.Value, CultureInfo.InvariantCulture),
-            format => format.Attribute("formatCode")?.Value ?? string.Empty);
+    Dictionary<int, string> customFormats = [];
+    foreach (XElement format in document.Descendants(main + "numFmt"))
+    {
+        if (int.TryParse(format.Attribute("numFmtId")?.Value, out int numberFormatId)
+            && !customFormats.ContainsKey(numberFormatId))
+        {
+            customFormats.Add(numberFormatId, format.Attribute("formatCode")?.Value ?? string.Empty);
+        }
+    }
 
     int styleIndex = 0;
     foreach (XElement format in document.Descendants(main + "cellXfs").Elements(main + "xf"))

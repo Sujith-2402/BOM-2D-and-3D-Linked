@@ -7,9 +7,9 @@ C:\Tutorial\BOM_Extarction\obj\Release\net10.0\BOM_Extarction.GeneratedMSBuildEd
 C:\Tutorial\BOM_Extarction\obj\Release\net10.0\BOM_Extarction.AssemblyInfoInputs.cache
 C:\Tutorial\BOM_Extarction\obj\Release\net10.0\BOM_Extarction.AssemblyInfo.cs
 C:\Tutorial\BOM_Extarction\obj\Release\net10.0\BOM_Extarction.csproj.CoreCompileInputs.cache
+C:\Tutorial\BOM_Extarction\obj\Release\net10.0\BOM_Extarction.sourcelink.json
 C:\Tutorial\BOM_Extarction\obj\Release\net10.0\BOM_Extarction.dll
 C:\Tutorial\BOM_Extarction\obj\Release\net10.0\refint\BOM_Extarction.dll
 C:\Tutorial\BOM_Extarction\obj\Release\net10.0\BOM_Extarction.pdb
 C:\Tutorial\BOM_Extarction\obj\Release\net10.0\BOM_Extarction.genruntimeconfig.cache
 C:\Tutorial\BOM_Extarction\obj\Release\net10.0\ref\BOM_Extarction.dll
-C:\Tutorial\BOM_Extarction\obj\Release\net10.0\BOM_Extarction.sourcelink.json
